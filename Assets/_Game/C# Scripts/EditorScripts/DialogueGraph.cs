@@ -23,11 +23,24 @@ public class DialogueGraph : EditorWindow
         ConstructGraphView();
         GenerateToolbar();
         GenerateMiniMap();
+        //GenerateBlackBoard();
+        OnGUI();
     }
 
+    /*private void GenerateBlackBoard()
+    {
+        var blackboard = new Blackboard(_graphView);
+        blackboard.Add(new BlackboardSection { title = "Exposed Properties"});
+        blackboard.addItemRequested = _blackboard => { _graphView.AddPropertyToBlackBoard(new ExposedProperty()); };
+        blackboard.SetPosition(new Rect(10, 30, 200, 300));
+        _graphView.Add(blackboard);
+        _graphView.Blackboard = blackboard;
+
+
+    }*/
     private void ConstructGraphView()
     {
-        _graphView = new DialogueGraphView
+        _graphView = new DialogueGraphView (this)
         {
             name = "Dialogue Graph"
         };
@@ -49,10 +62,6 @@ public class DialogueGraph : EditorWindow
         toolbar.Add( new Button( () => RequestDataOperation(true)) { text = "Save Data" });
         toolbar.Add( new Button( () => RequestDataOperation(false)) { text = "Load Data" });
 
-
-        var _nodeCreateButton = new Button(clickEvent: () => { _graphView.CreateNode("Dialogue Node"); });
-        _nodeCreateButton.text = "Create Node";
-        toolbar.Add(_nodeCreateButton);
         rootVisualElement.Add(toolbar);
 
     }
@@ -60,7 +69,7 @@ public class DialogueGraph : EditorWindow
     private void GenerateMiniMap()
     {
         var miniMap = new MiniMap { anchored = true };
-        miniMap.SetPosition(new Rect(x: 10, y: 30, width: 200, height: 140));
+        miniMap.SetPosition(new Rect(this.position.width-210,30,200, 140));
         _graphView.Add(miniMap);
     }
 
@@ -86,6 +95,13 @@ public class DialogueGraph : EditorWindow
     {
         rootVisualElement.Remove(_graphView);
     }
-
+    private void OnGUI()
+    {
+        if (Event.current.rawType == EventType.Layout)
+        {
+            MiniMap _miniMap = _graphView.contentContainer.Q<MiniMap>();
+            _miniMap.SetPosition(new Rect(this.position.width - 210, 30, 200, 140));
+        }
+    }
 }
 

@@ -8,7 +8,9 @@ using System.Linq;
 public class DialogueGraphView : GraphView
 {
     public readonly Vector2 _defaultNodeSize = new Vector2(x: 150, y: 200);
-   public DialogueGraphView()
+  
+    private NodeSearchWindow _searchWindow;
+   public DialogueGraphView(EditorWindow editorWindow)
     {
         styleSheets.Add(Resources.Load<StyleSheet>(path: "Dialogue"));
         SetupZoom(ContentZoomer.DefaultMinScale,ContentZoomer.DefaultMaxScale);
@@ -23,6 +25,14 @@ public class DialogueGraphView : GraphView
 
 
         AddElement(GenerateEntryPointNode());
+        AddSearchWindow(editorWindow);
+    }
+
+    private void AddSearchWindow(EditorWindow editorWindow)
+    {
+        _searchWindow = ScriptableObject.CreateInstance<NodeSearchWindow>();
+        _searchWindow.Init(editorWindow, this);
+        nodeCreationRequest = context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), _searchWindow);
     }
 
     public override List<Port> GetCompatiblePorts (Port _startPort, NodeAdapter _nodeAdapter)
@@ -69,12 +79,12 @@ public class DialogueGraphView : GraphView
         return node;
     }
 
-    public void CreateNode(string _nodeName)
+    public void CreateNode(string _nodeName, Vector2 position)
     {
-        AddElement(CreateDialogueNode(_nodeName));
+        AddElement(CreateDialogueNode(_nodeName,position));
     }
 
-    public DialogueNode CreateDialogueNode(string _nodeName)
+    public DialogueNode CreateDialogueNode(string _nodeName, Vector2 position)
     {
         var _dialogueNode = new DialogueNode
         {
@@ -107,7 +117,7 @@ public class DialogueGraphView : GraphView
 
         _dialogueNode.RefreshExpandedState();
         _dialogueNode.RefreshPorts();
-        _dialogueNode.SetPosition(new Rect(position: Vector2.zero, _defaultNodeSize));
+        _dialogueNode.SetPosition(new Rect(position, _defaultNodeSize));
 
         return _dialogueNode;
     }
@@ -161,6 +171,6 @@ public class DialogueGraphView : GraphView
         _dialogueNode.RefreshPorts();
         _dialogueNode.RefreshExpandedState();
 
-
     }
+
 }

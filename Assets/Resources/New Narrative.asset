@@ -22,13 +22,25 @@ MonoBehaviour:
   - _baseNodeGuid: 60f4f340-51ee-4510-99d9-7f81554d4768
     _portName: Choice 2
     _targetNodeGuid: 5410408b-02cf-405e-903d-c9753c679c48
+  - _baseNodeGuid: d5e906a3-342e-4695-9662-c5e1dfd29bf4
+    _portName: Choice 1
+    _targetNodeGuid: f58d3ea0-cc25-4892-998a-6c4ab150b827
+  - _baseNodeGuid: 5410408b-02cf-405e-903d-c9753c679c48
+    _portName: Choice 1
+    _targetNodeGuid: 6ee9fda1-9d68-443f-bb18-2b194fbc4b4e
   DialogueNodeData:
   - _Guid: 60f4f340-51ee-4510-99d9-7f81554d4768
     _dialogueText: Hello!
     _position: {x: 351, y: 200}
+  - _Guid: f58d3ea0-cc25-4892-998a-6c4ab150b827
+    _dialogueText: Dialogue Node
+    _position: {x: 886, y: 200}
   - _Guid: d5e906a3-342e-4695-9662-c5e1dfd29bf4
     _dialogueText: Dialogue Node
     _position: {x: 622, y: 200}
+  - _Guid: 6ee9fda1-9d68-443f-bb18-2b194fbc4b4e
+    _dialogueText: Dialogue Node
+    _position: {x: 901, y: 316}
   - _Guid: 5410408b-02cf-405e-903d-c9753c679c48
     _dialogueText: Dialogue Node
-    _position: {x: 622, y: 316}
+    _position: {x: 645, y: 321}
