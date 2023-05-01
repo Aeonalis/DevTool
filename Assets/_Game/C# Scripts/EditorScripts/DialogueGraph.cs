@@ -23,21 +23,10 @@ public class DialogueGraph : EditorWindow
         ConstructGraphView();
         GenerateToolbar();
         GenerateMiniMap();
-        //GenerateBlackBoard();
         OnGUI();
     }
 
-    /*private void GenerateBlackBoard()
-    {
-        var blackboard = new Blackboard(_graphView);
-        blackboard.Add(new BlackboardSection { title = "Exposed Properties"});
-        blackboard.addItemRequested = _blackboard => { _graphView.AddPropertyToBlackBoard(new ExposedProperty()); };
-        blackboard.SetPosition(new Rect(10, 30, 200, 300));
-        _graphView.Add(blackboard);
-        _graphView.Blackboard = blackboard;
 
-
-    }*/
     private void ConstructGraphView()
     {
         _graphView = new DialogueGraphView (this)

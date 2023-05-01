@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 //using UnityEngine.UIElements;
 
 
@@ -10,7 +11,6 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI _button1;
     public TextMeshProUGUI _button2;
-    public TextMeshProUGUI _nameText;
     public TextMeshProUGUI _dialogueText;
     private Queue <string> _sentences;
     public Animator _introDialogueAnimator;
@@ -70,38 +70,36 @@ public class DialogueManager : MonoBehaviour
            
             if (nodeData._baseNodeGuid == _guid)
             {
-                Debug.Log("Evelynn".Equals(nodeData._portName));
                 if (buttonFlag)
                 {
-                  
+                 
                     _button2.text = "SampleText";
                     _button2.text = nodeData._portName;
                     triggerComp._GUID = nodeData._targetNodeGuid;
                     triggerComp._name = nodeData._portName;
-   
                     if (!triggerComp._name.Equals("Evelynn") && !triggerComp._name.Equals("Cassiel"))
                     {
                         triggerComp._name = _name;
                     }
-                   
-
+                    
                 }
                 else
                 {
                     _button1.text = "SampleText";
                     _button1.text = nodeData._portName;                   
                     triggerComp2._GUID = nodeData._targetNodeGuid;
-                    triggerComp2._name = nodeData._portName;                  
-                    if (!triggerComp2._name.Equals("Evelynn") && !triggerComp2._name.Equals("Cassiel"))
-                    {
-                        triggerComp2._name = _name;
-                    }
-                    
+                    triggerComp2._name = nodeData._portName;
+
+                     if (!triggerComp2._name.Equals("Evelynn") && !triggerComp2._name.Equals("Cassiel"))
+                     {
+                         triggerComp2._name = _name;
+                     }
 
                 }
                 buttonFlag = true;
             }
         }
+       
         switch (_name)
         {
             case "Cassiel":
