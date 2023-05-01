@@ -9,30 +9,31 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI _button1;
-    public TextMeshProUGUI _button2;
+    public TextMeshProUGUI _button1Text;
+    public TextMeshProUGUI _button2Text;
+    public Button _button1;
+    public Button _button2;
+    public Animator _button1Animator;
+    public Animator _button2Animator;
+    public GameObject _choice1Panel;
+    public GameObject _choice2Panel;
     public TextMeshProUGUI _dialogueText;
+    public Animator _textBoxAnimator;
     private Queue <string> _sentences;
     public Animator _introDialogueAnimator;
     public Animator _introPortraitAnimator;
-    public Animator _continueAnimator;
-    public Animator _textBoxAnimator;
-    public Animator _choiceAnimator;
-    public float _typingSpeed;
-    public Button _continueBtn;
-    public Button _continueBtn2;
     public GameObject _introPanel;
-    public GameObject _choice01Panel;
-    public GameObject _choice02Panel;
+    public float _typingSpeed;
+
 
 
     private bool buttonFlag = false;
 
     void Start()
     {
-        _choice01Panel.SetActive(false);
-        _choice02Panel.SetActive(false);
-        _continueBtn2.gameObject.SetActive(false);
+        _choice1Panel.SetActive(false);
+        _choice2Panel.SetActive(false);
+        _button2.gameObject.SetActive(false);
         _sentences = new Queue<string>();
     }
 
@@ -41,12 +42,12 @@ public class DialogueManager : MonoBehaviour
         _introDialogueAnimator.SetBool("IsOpen", true);
         _introPortraitAnimator.SetBool("IsOpen", true);
         _textBoxAnimator.SetBool("IsOpen", true);
-        _continueAnimator.SetBool("IsOpen", true);
-        _choice01Panel.SetActive(false);
-        _choice02Panel.SetActive(false);
-        DialogueTrigger triggerComp = _continueBtn2.gameObject.GetComponent<DialogueTrigger>();
+        _button1Animator.SetBool("IsOpen", true);
+        _choice1Panel.SetActive(false);
+        _choice2Panel.SetActive(false);
+        DialogueTrigger triggerComp = _button2.gameObject.GetComponent<DialogueTrigger>();
         triggerComp._GUID = null;
-        DialogueTrigger triggerComp2 = _continueBtn.gameObject.GetComponent<DialogueTrigger>();
+        DialogueTrigger triggerComp2 = _button1.gameObject.GetComponent<DialogueTrigger>();
         triggerComp2._GUID = null;
     
 
@@ -73,8 +74,8 @@ public class DialogueManager : MonoBehaviour
                 if (buttonFlag)
                 {
                  
-                    _button2.text = "SampleText";
-                    _button2.text = nodeData._portName;
+                    _button2Text.text = "SampleText";
+                    _button2Text.text = nodeData._portName;
                     triggerComp._GUID = nodeData._targetNodeGuid;
                     triggerComp._name = nodeData._portName;
                     if (!triggerComp._name.Equals("Evelynn") && !triggerComp._name.Equals("Cassiel"))
@@ -85,8 +86,8 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    _button1.text = "SampleText";
-                    _button1.text = nodeData._portName;                   
+                    _button1Text.text = "SampleText";
+                    _button1Text.text = nodeData._portName;                   
                     triggerComp2._GUID = nodeData._targetNodeGuid;
                     triggerComp2._name = nodeData._portName;
 
@@ -103,11 +104,11 @@ public class DialogueManager : MonoBehaviour
         switch (_name)
         {
             case "Cassiel":
-                _choice02Panel.SetActive(true);
+                _choice2Panel.SetActive(true);
                 _introPanel.SetActive(false);
                 break;
             case "Evelynn":
-                _choice01Panel.SetActive(true);
+                _choice1Panel.SetActive(true);
                 _introPanel.SetActive(false);
                 break;
             default:
@@ -117,11 +118,11 @@ public class DialogueManager : MonoBehaviour
         buttonFlag = false;
         if (triggerComp._GUID == null)
         {       
-            _continueBtn2.gameObject.SetActive(false);         
+            _button2.gameObject.SetActive(false);         
         }
         else
         {
-            _continueBtn2.gameObject.SetActive(true);
+            _button2.gameObject.SetActive(true);
         }
         if (triggerComp2._GUID == null)
         {
@@ -137,8 +138,8 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        _continueBtn.interactable = false;
-        _continueBtn2.interactable = false;
+        _button1.interactable = false;
+        _button2.interactable = false;
         string sentence = _sentences.Dequeue();
         
         StopAllCoroutines();
@@ -153,15 +154,15 @@ public class DialogueManager : MonoBehaviour
              _dialogueText.text += letter;
              yield return new WaitForSeconds(_typingSpeed);
          }
-         _continueBtn.interactable = true;
-        _continueBtn2.interactable = true;
+         _button1.interactable = true;
+        _button2.interactable = true;
     }
     void EndDialogue()
     {
         Debug.Log("End of conversation.");
         _introDialogueAnimator.SetBool("IsOpen", false);
         _introPortraitAnimator.SetBool("IsOpen", false);
-        _continueAnimator.SetBool("IsOpen", false);
+        _button1Animator.SetBool("IsOpen", false);
         _textBoxAnimator.SetBool("IsOpen", false);
 
     }

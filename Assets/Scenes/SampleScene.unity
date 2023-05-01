@@ -591,12 +591,22 @@ PrefabInstance:
         type: 3}
       propertyPath: _button1
       value: 
-      objectReference: {fileID: 826541465}
+      objectReference: {fileID: 932267096}
     - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
         type: 3}
       propertyPath: _button2
       value: 
-      objectReference: {fileID: 583290795}
+      objectReference: {fileID: 21270622}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _button01
+      value: 
+      objectReference: {fileID: 932267096}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _button02
+      value: 
+      objectReference: {fileID: 21270622}
     - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
         type: 3}
       propertyPath: _introPanel
@@ -604,9 +614,29 @@ PrefabInstance:
       objectReference: {fileID: 1517678894}
     - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
         type: 3}
+      propertyPath: _button1Text
+      value: 
+      objectReference: {fileID: 826541465}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _button2Text
+      value: 
+      objectReference: {fileID: 583290795}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
       propertyPath: _continueBtn
       value: 
       objectReference: {fileID: 932267096}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _choice1Panel
+      value: 
+      objectReference: {fileID: 750099232}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _choice2Panel
+      value: 
+      objectReference: {fileID: 1672347591}
     - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
         type: 3}
       propertyPath: _continueBtn2
@@ -634,9 +664,29 @@ PrefabInstance:
       objectReference: {fileID: 21270621}
     - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
         type: 3}
+      propertyPath: _button1Animator
+      value: 
+      objectReference: {fileID: 932267099}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _button2Animator
+      value: 
+      objectReference: {fileID: 21270621}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
       propertyPath: _textBoxAnimator
       value: 
       objectReference: {fileID: 508971170}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _button01Animator
+      value: 
+      objectReference: {fileID: 932267099}
+    - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
+        type: 3}
+      propertyPath: _button02Animator
+      value: 
+      objectReference: {fileID: 21270621}
     - target: {fileID: 564292863815403464, guid: e2673badc83865641bc086dc466cb5d0,
         type: 3}
       propertyPath: _continueAnimator
@@ -721,6 +771,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8490138563790333632, guid: 1049f8ab6b219744e85713f2f124db7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Button02_btn
+      objectReference: {fileID: 0}
     - target: {fileID: 8490138564282123713, guid: 1049f8ab6b219744e85713f2f124db7d,
         type: 3}
       propertyPath: m_Name
