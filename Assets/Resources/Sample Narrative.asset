@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283df5b9c766bde48a0787d0f911134b, type: 3}
+  m_Name: Sample Narrative
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - _baseNodeGuid: 7c659545-6dc2-4fae-9768-f7c36f4b8113
+    _portName: Next
+    _targetNodeGuid: 60f4f340-51ee-4510-99d9-7f81554d4768
+  - _baseNodeGuid: 60f4f340-51ee-4510-99d9-7f81554d4768
+    _portName: Continue
+    _targetNodeGuid: 6e7557cd-c188-47a8-b111-d5d26525fd89
+  - _baseNodeGuid: 6e7557cd-c188-47a8-b111-d5d26525fd89
+    _portName: Continue
+    _targetNodeGuid: 3748bedd-35c8-4b42-a780-5b1f39e56775
+  - _baseNodeGuid: 3748bedd-35c8-4b42-a780-5b1f39e56775
+    _portName: Continue
+    _targetNodeGuid: 5d2c524f-2203-46b5-9c61-d81a47bf21aa
+  - _baseNodeGuid: 5d2c524f-2203-46b5-9c61-d81a47bf21aa
+    _portName: Cassiel
+    _targetNodeGuid: 08f1bcd3-e3a9-4bde-b908-edd1cd33aa8f
+  - _baseNodeGuid: 5d2c524f-2203-46b5-9c61-d81a47bf21aa
+    _portName: Evelynn
+    _targetNodeGuid: c4e34498-1d2c-4979-a9e8-0ecc2182e314
+  - _baseNodeGuid: 08f1bcd3-e3a9-4bde-b908-edd1cd33aa8f
+    _portName: continue
+    _targetNodeGuid: bf90c126-f5b6-4264-914f-8285deeb0e5f
+  - _baseNodeGuid: c4e34498-1d2c-4979-a9e8-0ecc2182e314
+    _portName: Continue
+    _targetNodeGuid: f8d740e2-c3cc-453d-aad4-a97b898c0d0d
+  - _baseNodeGuid: f8d740e2-c3cc-453d-aad4-a97b898c0d0d
+    _portName: Continue
+    _targetNodeGuid: 78959f27-bf1a-4115-81d6-811852a9ce29
+  DialogueNodeData:
+  - _Guid: 60f4f340-51ee-4510-99d9-7f81554d4768
+    _dialogueText: 'Finally, it took you long enough to show up! Net runners have
+      a reputation of being fashionably late, but you broke a new record! '
+    _name: 
+    _choiceSelection: 
+    _position: {x: 205, y: 200}
+  - _Guid: 6e7557cd-c188-47a8-b111-d5d26525fd89
+    _dialogueText: 'I''m Azriel, our division''s top cybernetic reaper. I''ll be
+      giving you a tour and introducing you to my colleagues, if you can call them
+      that.  '
+    _name: 
+    _choiceSelection: 
+    _position: {x: 1120, y: 200}
+  - _Guid: 3748bedd-35c8-4b42-a780-5b1f39e56775
+    _dialogueText: 'What do I mean by that? I did tell you I''m a reaper no? I''m
+      pretty sure you can figure out the rest on your own. '
+    _name: 
+    _choiceSelection: 
+    _position: {x: 2083, y: 200}
+  - _Guid: 5d2c524f-2203-46b5-9c61-d81a47bf21aa
+    _dialogueText: But for now, we need to get you introduced to some of my work
+      colleagues. Who would you like to meet first, Cassiel or Evelynn? I'd recommend
+      Evelynn, she's a sweetheart, and well, Cassiel's an asshole.
+    _name: 
+    _choiceSelection: 
+    _position: {x: 2885, y: 200}
+  - _Guid: c4e34498-1d2c-4979-a9e8-0ecc2182e314
+    _dialogueText: Why hello, are you new here?
+    _name: 
+    _choiceSelection: 
+    _position: {x: 4198, y: 321}
+  - _Guid: f8d740e2-c3cc-453d-aad4-a97b898c0d0d
+    _dialogueText: 'Azriel sent you? Said I''m a sweetheart and you should meet me
+      first? '
+    _name: 
+    _choiceSelection: 
+    _position: {x: 4608, y: 321}
+  - _Guid: 78959f27-bf1a-4115-81d6-811852a9ce29
+    _dialogueText: '*sigh* He''s an idiot I swear. It''s a pleasure to meet you!
+      I''m Evelynn, your friendly physician and not so friendly net runner. '
+    _name: 
+    _choiceSelection: 
+    _position: {x: 5179, y: 321}
+  - _Guid: 08f1bcd3-e3a9-4bde-b908-edd1cd33aa8f
+    _dialogueText: What? Another new recruit? That's the 10th one this week! I can't
+      wait to see how long you'll last.
+    _name: 
+    _choiceSelection: 
+    _position: {x: 4224, y: 93}
+  - _Guid: bf90c126-f5b6-4264-914f-8285deeb0e5f
+    _dialogueText: 'Ah, I''m getting ahead of myself. Formalities can be quite tedious.
+      The name''s Cassiel: you''d do well to remember it and praise it, for it can
+      save your life.'
+    _name: 
+    _choiceSelection: 
+    _position: {x: 5008, y: 93}
